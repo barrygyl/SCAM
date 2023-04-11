@@ -1,6 +1,6 @@
 # 人工智能
 # 项目：Combining same-radical global information model
-# 开发人：高云龙
+# 开发人：Barry
 # 开发时间：2023-03-14  16:33
 # 开发工具：PyCharm
 # coding: UTF-8
