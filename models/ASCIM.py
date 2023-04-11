@@ -153,7 +153,6 @@ class Model(nn.Module):
                                                          embedding_dim=config.embed, vocab_size=config.vocab_size_2)
         self.device = config.device
         self.tokenizer = config.tokenizer
-        self.radical_pre = config.radical_pre
         self.bert = BertModel.from_pretrained(config.bert_path)
         self.lstm = nn.LSTM(input_size=config.hidden_size,
                             hidden_size=config.l_hidden_size,
