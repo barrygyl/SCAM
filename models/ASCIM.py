@@ -53,8 +53,7 @@ class Config(object):
         self.num_epochs = 30                                                        # epoch数
         self.learning_rate = 1e-5                                                   # 学习率 
         self.embed = 768                                                            # 部首向量维度
-        self.vocab_size_1 = 20879                                                   # 同部首字词表大小
-        self.vocab_size_2 = 21130                                                  # Bert词表
+        self.vocab_size_2 = 21130                                                   # Bert词表
         self.l_hidden_size = 384                                                    # lstm隐藏层
         self.l_num_layers = 2                                                       # lstm层数
         self.hidden_size = 768
