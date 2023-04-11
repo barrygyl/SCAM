@@ -33,6 +33,7 @@ class Config(object):
         # self.train_path = dataset + '/data/train.txt'                               # 训练集
         # self.dev_path = dataset + '/data/dev.txt'                                   # 验证集
         # self.test_path = dataset + '/data/test.txt'                                 # 测试集
+        self.vocab_path_1 = './radical_vector/vocab_same_radical.pkl'               # 词表
         self.vocab_path_2 = './radical_vector/vocab_bert.pkl'                       # 词表
         self.index_dict = './radical_vector/sr_to_bert.pkl'                         # 指标字典
         self.radical_path = './radical_vector/char2radical.txt'                     # 部首的语料库位置
