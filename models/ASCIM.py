@@ -37,6 +37,7 @@ class Config(object):
         self.vocab_path_2 = './radical_vector/vocab_bert.pkl'                       # 词表
         self.index_dict = './radical_vector/sr_to_bert.pkl'                         # 指标字典
         # self.radical_path = './radical_vector/char2radical.txt'                     # 部首的语料库位置
+        self.radical_path = './radical_vector/radical_dict.pkl'                     # 部首的字典位置
         # self.radical_dict = create_dict(self.radical_path)                          # 构建部首查询字典
         self.class_list = [x.strip() for x in open(
             dataset + '/data/class.txt', encoding='utf-8').readlines()]             # 类别名单
