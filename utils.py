@@ -28,18 +28,13 @@ def build_dataset(config):
     with open(config.vocab_path_1, 'rb') as f:
         vocab_same_radical = pickle.load(f)
     vocab_same_radical = {word: idx for idx, word in enumerate(vocab_same_radical)}
-
+    with open(config.radical_path, 'rb') as f:
+        radical_dict = pickle.load(f)
     def load_dataset(path, pad_size=config.pad_size):
         contents = []
         # f = pd.read_csv(path)  # CNT数据集
         # f = pd.read_csv(path, delimiter='\t')  # TNT数据集
-        # a = 0
         # for lin in trange(len(f)):
-        #     '''for pre'''
-        #     # if a >= 1000:
-        #     #     break
-        #     # else:
-        #     #     a += 1
         #     content = f.iloc[lin].content
         #     label = int(f.iloc[lin].labels)
         #     # words_line = []
@@ -62,7 +57,7 @@ def build_dataset(config):
         #             token_ids = token_ids[:pad_size]
         #             seq_len = pad_size
         #             token = token[:pad_size]
-        #     words_r_line = Find_Radical(token, 1, config.radical_dict, pad_size)
+        #     words_r_line = Find_Radical(token, 1, radical_dict, pad_size)
         #     for word in words_r_line:
         #         rid = vocab_same_radical.get(word, vocab_same_radical.get(UNK_ra))
         #         words_s_line.append([index_dict.get(i, 100) for i in range(rid-1, rid-config.same_size-1, -1)])
@@ -72,12 +67,7 @@ def build_dataset(config):
         使用TXT的数据集———THU数据集
         """
         with open(path, 'r', encoding='UTF-8') as f:
-            a = 0
             for line in tqdm(f):
-                # if a >= 1000:
-                #     break
-                # else:
-                #     a += 1
                 lin = line.strip()
                 if not lin:
                     continue
@@ -102,7 +92,7 @@ def build_dataset(config):
                         token_ids = token_ids[:pad_size]
                         seq_len = pad_size
                         token = token[:pad_size]
-                words_r_line = Find_Radical(token, config.radical_dict, pad_size)
+                words_r_line = Find_Radical(token, radical_dict, pad_size)
                 for word in words_r_line:
                      rid = vocab_same_radical.get(word, vocab_same_radical.get(UNK_ra))
                      words_s_line.append([index_dict.get(i, 100) for i in range(rid-1, rid-config.same_size-1, -1)])
