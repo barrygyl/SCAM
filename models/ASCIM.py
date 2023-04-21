@@ -23,7 +23,7 @@ class Config(object):
     """配置参数"""
 
     def __init__(self, dataset):
-        self.model_name = 'ASCIM'
+        self.model_name = 'SCAM'
         self.train_path = dataset + '/data/train.tsv'                               # 训练集
         self.dev_path = dataset + '/data/val.tsv'                                   # 验证集
         self.test_path = dataset + '/data/test.tsv'                                 # 测试集
