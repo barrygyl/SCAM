@@ -143,7 +143,7 @@ class CBAM(nn.Module):
         return out
 
 
-"""ASCIM"""
+"""SCAM"""
 
 
 class Model(nn.Module):
